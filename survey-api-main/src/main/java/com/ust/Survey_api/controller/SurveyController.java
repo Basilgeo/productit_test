@@ -1,5 +1,6 @@
 package com.ust.Survey_api.controller;
 
+
 import com.ust.Survey_api.exception.SetNotFoundException;
 import com.ust.Survey_api.feign.FullResponse;
 import com.ust.Survey_api.feign.SetNameDto;
@@ -29,7 +30,7 @@ public class SurveyController {
 
     @PostMapping("/survey")
     public ResponseEntity<FullResponse> addSurvey(@RequestBody SurveyRequestDto survey) {
-       FullResponse surveyResponse = surveyService.addSurvey(survey);
+        FullResponse surveyResponse = surveyService.addSurvey(survey);
         if (surveyResponse == null) {
             throw new SetNotFoundException("Set name not found.");
         }
